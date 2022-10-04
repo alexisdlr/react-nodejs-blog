@@ -1,12 +1,36 @@
 $lightgreen: #b9e7e7;
 $white:#fff;
+$purple: #8758FF;
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+p {
+  font-family: 'Inter', sans-serif;
+}
 
 .app {
   display: flex;
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(17,24,39);
+  background: linear-gradient(18deg, rgba(17,24,39,1) 28%, rgba(0,1,20,1) 74%);
+  color: #fff;
+
   .container{
     width: 1024px;
+
+    @media (min-width: 500px) and (max-width: 1000px) {
+      width: 100%;
+      padding: 0 2rem;
+    }
+
+    //link
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
     //login and register
     .auth{
       display: flex;
@@ -14,13 +38,12 @@ $white:#fff;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: $lightgreen;
 
 
       h1 {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
-        color: #008080;
+        color: $purple;
       }
       form {
         display: flex;
@@ -36,7 +59,7 @@ $white:#fff;
           border-bottom: 1px solid gray;
           &:focus {
             outline: none;
-            border-bottom: 1px solid #008080;
+            border-bottom: 1px solid $purple;
             transition: 300ms ease-in-out;
           }
         }
@@ -52,7 +75,7 @@ $white:#fff;
         button {
           padding: .8rem;
           border: none;
-          background-color: #008080;
+          background-color: $purple;
           cursor: pointer;
           color: white;
         }
@@ -64,6 +87,7 @@ $white:#fff;
       .container{
         padding: .8rem 0;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         .logo{
           max-width: 100px;
@@ -73,7 +97,301 @@ $white:#fff;
           }
         }
         .links{
+          display: flex;
+          align-items: center;
+          gap: .8rem;
+          .link {
+            transition: 300ms ease-in-out;
+            &:hover {
+              color: $purple;
 
+            }
+          }
+          h6 {
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          span {
+            cursor: pointer;
+          }
+          .write {
+            background-color: $purple;
+            padding: .3rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            &:hover {
+              color: $purple;
+              background-color: transparent;
+              transition: 300ms ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    //Footer
+    footer {
+      margin-top: 100px;
+      padding: 1.3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $purple;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      img {
+        max-width: 50px;
+        border-radius: 50%;
+      } 
+    }
+    //home
+    .home {
+      .posts {
+       margin-top: 3rem;
+       display: flex;
+       flex-direction: column;
+       gap: 150px;
+
+       .post {
+        display: flex;
+        gap: 100px;
+
+        &:nth-child(2n+1) {
+          flex-direction: row-reverse;
+        }
+        .img {
+          flex: 2;
+          position: relative;
+
+       
+          img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: -20px 20px 1px 1px $purple;
+
+          }
+        
+        }
+        .content {
+          flex: 3;
+          display: flex;
+          flex-direction: row;
+
+          justify-content: space-between;
+          gap: 2rem;
+          h2 {
+            font-size: 2.5rem;
+            color: $purple;
+            margin-bottom: 1.5rem;
+          }
+          p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+
+          }
+          button {
+            width: max-content;
+            cursor: pointer;
+            border: none;
+            background-color: $purple;
+            font-weight: bold;
+            padding: .3rem 1rem;
+            border-radius: 8px;
+            transition: 300ms ease-in-out;
+
+
+            &:hover {
+              color: $white;
+              background-color: transparent;
+            }
+          }
+        }
+       }
+      }
+    }
+    //single
+    .single {
+      display: flex;
+      gap: 3rem;
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: .9rem;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          span {font-weight: bold;}
+        }
+        .edit {
+          display: flex;
+          gap: .5rem;
+          img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      h1 {
+        font-size: 3.5rem;
+        color: $purple;
+      }
+      p {
+        text-align: justify;
+        line-height: 2rem;
+      }
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h2{
+          font-size: 1.2rem;
+          color: $purple;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: .8rem;
+
+          img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+          }
+          button {
+            background-color: #8758FF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    //WRITE
+    .add {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1.2rem;
+
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        input {
+          padding: .8rem;
+          border-radius: 8px;
+          background-color: transparent;
+          border: 1px solid $white;
+          color: $white;
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        .editorContainer {
+          height: 300px;
+          border-radius: 8px;
+          overflow: scroll;
+          border: 1px solid $white;
+          .editor {
+            border: none;
+          }
+        }
+      }
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        .item {
+          border-radius: 8px;
+          border: 1px solid $white;
+          padding: .8rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 12px;
+          color: $white;
+          gap: .5rem;
+
+          span {
+            font-size: .9rem;
+          }
+          h2 {
+            font-size: 1.3rem;
+          }
+          label {
+            font-size: .9rem;
+          }
+          .file {
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover {
+              color: $purple;
+              transition: 300ms ease-in-out;
+            } 
+          }
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            :first-child {
+              background-color: $purple;
+              border: 1px solid $purple;
+              color: #fff;
+              border-radius: 8px;
+              padding: .5rem 1rem;
+              cursor: pointer;
+              &:hover {
+                background-color: transparent;
+                transition: 300ms ease-in-out;
+              }
+            }
+            :nth-child(2) {
+              background-color: transparent;
+              border: 1px solid $purple;
+              color: #fff;
+              border-radius: 8px;
+              padding: .5rem 1rem;
+              cursor: pointer;
+              &:hover {
+                background-color: $purple;
+                transition: 300ms ease-in-out;
+              }
+            }
+            
+          }
+          .cat {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+          }
+       
         }
       }
     }
